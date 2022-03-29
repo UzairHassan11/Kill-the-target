@@ -20,10 +20,15 @@ public class SniperController : MonoBehaviour
 
     [SerializeField] private Transform bulletSpawnPoint;
 
+    [SerializeField] private Bullet bulletPrefab;
+
     private Vector2 inputDelta;
     [SerializeField] Vector2 camX_Limits, camY_Limits;
     public float moveSpeed;
 
+    [SerializeField] private ControllerState currentState;
+
+    [SerializeField] private Animator _animator;
     #endregion
     
     // Start is called before the first frame update
@@ -35,15 +40,10 @@ public class SniperController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            // if (controllerState == ControllerState.Idle)
-            // {
-            //     controllerState = ControllerState.Aiming;
-            //     // controlling = true;
-            //     mouseLastPosition = Input.mousePosition;
-            // }
-        }
+        if(currentState != ControllerState.Aiming)
+            return;;
+        
+        CheckRay();
         
         HandleZooming();
 
@@ -68,9 +68,10 @@ public class SniperController : MonoBehaviour
             zoomedIn = true;
         }
         
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && zoomedIn)
         {
             zoomedIn = false;
+            SpawnBullet();
         }
     }
 
@@ -110,17 +111,33 @@ public class SniperController : MonoBehaviour
 
     void SpawnBullet()
     {
-        
+        Instantiate(bulletPrefab).Spawn(HitInfo.point);
+    }
+
+    private RaycastHit HitInfo;
+    void CheckRay()
+    {
+        Ray ray = Camera.main.ViewportPointToRay ( new Vector3(0.5f,0.5f,0));
+        Debug.DrawRay(ray.origin, ray.direction * 10000, Color.yellow);
+        Physics.Raycast(ray, out HitInfo);
+    }
+
+    void ReloadGun()
+    {
+        currentState = ControllerState.Reloading;
+        _animator.SetTrigger("reload");
+        Invoke("SetToIdle", 1);
+    }
+
+    void SetToIdle()
+    {
+        currentState = ControllerState.Idle;
     }
 }
 public enum ControllerState
 {
     Idle,
     Aiming,
-    Shot_Fired,     // means bullet is airborn
-    Shot_Hit_Target,
-    Shot_Hit_NPC,
-    Shot_Missed,
-    Level_Win,
-    GameOver
+    Shot_Fired,
+    Reloading
 }
