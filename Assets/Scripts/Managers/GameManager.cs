@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public UiManager uiManager;
 
+    public SniperController sniperController;
     #endregion
 
     #region singleton

@@ -606,7 +606,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1277724587671565, guid: bfda4e0d0fa53a3408c43db701376490, type: 3}
       propertyPath: m_Name
-      value: wep_m24
+      value: sniper
       objectReference: {fileID: 0}
     - target: {fileID: 4584532889083677, guid: bfda4e0d0fa53a3408c43db701376490, type: 3}
       propertyPath: m_RootOrder
@@ -1061,6 +1061,11 @@ Transform:
   m_Father: {fileID: 1715337789}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &660634295 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95268274513387382, guid: bfda4e0d0fa53a3408c43db701376490, type: 3}
+  m_PrefabInstance: {fileID: 370135344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &676132893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,53 +1255,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1715337789}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &858915011
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 858915013}
-  - component: {fileID: 858915012}
-  m_Layer: 0
-  m_Name: Crosshair
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &858915012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858915011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195f6a61e128f44c79764e53653787d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 928899240}
-  crosshairAestheticObj: {fileID: 505556401}
-  hitPosition: {x: 0, y: 0, z: 0}
-  hitIndicator: {fileID: 91610889}
---- !u!4 &858915013
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858915011}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 107.623276, y: 29.622223, z: 1235.3212}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &903388457
@@ -2544,7 +2502,7 @@ Transform:
   - {fileID: 644493508}
   - {fileID: 1098285165}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917995654
 GameObject:
@@ -2730,6 +2688,52 @@ Transform:
   m_Father: {fileID: 450150799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2059089945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2059089947}
+  - component: {fileID: 2059089946}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2059089946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059089945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645ba8a6e61dc4f1a9779db852a33505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGameState: 0
+  uiManager: {fileID: 0}
+  sniperController: {fileID: 2079437651}
+--- !u!4 &2059089947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059089945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 107.82094, y: 28.738304, z: 307.2761}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2079437647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,6 +2837,8 @@ MonoBehaviour:
   zoomIn: {fileID: 1484867135}
   zoomOut: {fileID: 928971265}
   cameraTransitionSpeed: 5
+  zoomedIn: 0
+  fullyZoomed: 0
   zoomOutCrossheir: {fileID: 1999220837}
   zoomInCrossheir: {fileID: 505556401}
   gunMesh: {fileID: 2013461247}
@@ -2842,6 +2848,8 @@ MonoBehaviour:
   camX_Limits: {x: 95, y: 150}
   camY_Limits: {x: 25, y: 50}
   moveSpeed: 100
+  controllerState: 0
+  _animator: {fileID: 660634295}
 --- !u!1 &2090791727
 GameObject:
   m_ObjectHideFlags: 0
@@ -5984,5 +5992,5 @@ Transform:
   - {fileID: 7603832670502082828}
   - {fileID: 4656036612699328}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 101.92099, y: -64.401, z: -35.367004}

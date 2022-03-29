@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 
     public void Spawn(Vector3 targetPosition)
     {
+        print("asd");
         transform.DOMove(targetPosition, moveSpeed).SetEase(Ease.Linear).SetSpeedBased(true).onComplete = BulletHit;
         gameObject.SetActive(true);
     }
@@ -15,5 +16,6 @@ public class Bullet : MonoBehaviour
     void BulletHit()
     {
         gameObject.SetActive(false);
+        GameManager.instance.sniperController.SetStateIdle();
     }
 }

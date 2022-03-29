@@ -10,11 +10,9 @@ public class SniperController : MonoBehaviour
 
     [SerializeField] private float cameraTransitionSpeed;
 
-    private bool zoomedIn, fullyZoomed;
+    [SerializeField] bool zoomedIn, fullyZoomed;
 
     [SerializeField] private GameObject zoomOutCrossheir, zoomInCrossheir, gunMesh;
-
-    private ControllerState controllerState;
 
     [SerializeField] private Vector2 fovLimits;
 
@@ -26,11 +24,16 @@ public class SniperController : MonoBehaviour
     [SerializeField] Vector2 camX_Limits, camY_Limits;
     public float moveSpeed;
 
-    [SerializeField] private ControllerState currentState;
+    [SerializeField] private ControllerState controllerState;
 
     [SerializeField] private Animator _animator;
-    #endregion
     
+    private RaycastHit HitInfo;
+
+    #endregion
+
+    #region unity
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,14 +43,11 @@ public class SniperController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentState != ControllerState.Aiming)
-            return;;
-        
-        CheckRay();
-        
-        HandleZooming();
+        HandleInputs();
 
-        HandleCameraValues();
+        HandleCameraFOV();
+        
+        HandleGunMovement();
         
         zoomOutCrossheir.SetActive(!fullyZoomed);
         
@@ -55,27 +55,59 @@ public class SniperController : MonoBehaviour
         
         zoomInCrossheir.SetActive(fullyZoomed);
 
-        // joystick.enabled = fullyZoomed;
-        
-        if(fullyZoomed)
-            HandleCameraMovement();
+        fullyZoomed = Vector3.Distance(gunTransform.transform.position, zoomIn.position) < 0.05f;
+
+        if (controllerState == ControllerState.Aiming)
+        {
+            CheckRay();
+
+            if(fullyZoomed)
+                HandleCameraMovement();
+        }
+    }
+    
+
+    #endregion
+    
+    #region custom
+
+    void CheckRay()
+    {
+        Ray ray = Camera.main.ViewportPointToRay ( new Vector3(0.5f,0.5f,0));
+        Debug.DrawRay(ray.origin, ray.direction * 10000, Color.yellow);
+        Physics.Raycast(ray, out HitInfo);
     }
 
-    void HandleZooming()
+    void HandleInputs()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if(controllerState != ControllerState.Idle)
+                return;
+            
             zoomedIn = true;
+            controllerState = ControllerState.Aiming;
         }
-        
-        if (Input.GetMouseButtonUp(0) && zoomedIn)
+        if (Input.GetMouseButtonUp(0))
         {
+            if (controllerState != ControllerState.Aiming)
+                return;
+            
             zoomedIn = false;
-            SpawnBullet();
+            if (fullyZoomed)
+            {
+                SpawnBullet();
+                controllerState = ControllerState.Shot_Fired;
+                fullyZoomed = false;
+            }
+            else
+            {
+                controllerState = ControllerState.Idle;
+            }
         }
     }
 
-    void HandleCameraValues()
+    void HandleGunMovement()
     {
         // cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, zoomedIn ? zoomIn.FOV : zoomOut.FOV,
         //     Time.deltaTime * cameraTransitionSpeed);
@@ -85,11 +117,21 @@ public class SniperController : MonoBehaviour
         gunTransform.transform.rotation = Quaternion.Lerp(gunTransform.transform.rotation,
             zoomedIn ? zoomIn.rotation : zoomOut.rotation,
             Time.deltaTime * cameraTransitionSpeed);
+    }
 
-        fullyZoomed = Vector3.Distance(gunTransform.transform.position, zoomIn.position) < 0.05f;
-
+    void HandleCameraFOV()
+    {
+        // cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, zoomedIn ? zoomIn.FOV : zoomOut.FOV,
+        //     Time.deltaTime * cameraTransitionSpeed);
+        gunTransform.transform.position = Vector3.Lerp(gunTransform.transform.position,
+            zoomedIn ? zoomIn.position : zoomOut.position,
+            Time.deltaTime * cameraTransitionSpeed);
+        gunTransform.transform.rotation = Quaternion.Lerp(gunTransform.transform.rotation,
+            zoomedIn ? zoomIn.rotation : zoomOut.rotation,
+            Time.deltaTime * cameraTransitionSpeed);
+        
         cam.fieldOfView =
-            Mathf.Lerp(cam.fieldOfView, Input.GetMouseButton(0) ? fovLimits.x : fovLimits.y,
+            Mathf.Lerp(cam.fieldOfView, controllerState == ControllerState.Aiming ? fovLimits.x : fovLimits.y,
                 Time.deltaTime * cameraTransitionSpeed);
     }
     
@@ -114,25 +156,18 @@ public class SniperController : MonoBehaviour
         Instantiate(bulletPrefab).Spawn(HitInfo.point);
     }
 
-    private RaycastHit HitInfo;
-    void CheckRay()
-    {
-        Ray ray = Camera.main.ViewportPointToRay ( new Vector3(0.5f,0.5f,0));
-        Debug.DrawRay(ray.origin, ray.direction * 10000, Color.yellow);
-        Physics.Raycast(ray, out HitInfo);
-    }
-
     void ReloadGun()
     {
-        currentState = ControllerState.Reloading;
+        controllerState = ControllerState.Reloading;
         _animator.SetTrigger("reload");
-        Invoke("SetToIdle", 1);
+        Invoke("SetStateIdle", 1);
     }
 
-    void SetToIdle()
+    public void SetStateIdle()
     {
-        currentState = ControllerState.Idle;
+        controllerState = ControllerState.Idle;
     }
+    #endregion
 }
 public enum ControllerState
 {
