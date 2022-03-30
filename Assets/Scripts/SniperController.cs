@@ -30,6 +30,7 @@ public class SniperController : MonoBehaviour
     
     private RaycastHit HitInfo;
 
+    private Vector3 basePosition;
     #endregion
 
     #region unity
@@ -38,6 +39,7 @@ public class SniperController : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        basePosition = cam.transform.position;
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class SniperController : MonoBehaviour
         
         HandleGunMovement();
         
-        zoomOutCrossheir.SetActive(!fullyZoomed);
+        zoomOutCrossheir.SetActive(controllerState == ControllerState.Aiming && !fullyZoomed);
         
         gunMesh.SetActive(!fullyZoomed);
         
@@ -69,7 +71,7 @@ public class SniperController : MonoBehaviour
 
     #endregion
     
-    #region custom
+    #region custom-functions
 
     void CheckRay()
     {
@@ -104,6 +106,8 @@ public class SniperController : MonoBehaviour
             {
                 controllerState = ControllerState.Idle;
             }
+
+            cam.transform.position = basePosition;
         }
     }
 
