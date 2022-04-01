@@ -87,6 +87,9 @@ public class SniperController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if(PointerOverUI.instance.IsPointerOverUIElement())
+                return;
+            
             if(controllerState != ControllerState.Idle)
                 return;
             
@@ -169,7 +172,6 @@ public class SniperController : MonoBehaviour
         }
         else
         {
-            print("0");
             ReloadGun();
         }
         Instantiate(bulletPrefab).Spawn(HitInfo.point, targetIsHuman);
@@ -177,7 +179,6 @@ public class SniperController : MonoBehaviour
 
     void ReloadGun()
     {
-        print("1");
         controllerState = ControllerState.Reloading;
         // gunAnimator.SetTrigger("New Trigger");
         _sniperAnimator.SetTrigger("reload");

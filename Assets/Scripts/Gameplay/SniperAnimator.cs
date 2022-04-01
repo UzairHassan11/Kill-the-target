@@ -11,7 +11,6 @@ public class SniperAnimator : MonoBehaviour
 
     public void SetTrigger(string str)
     {
-        print("as");
         _animator.SetTrigger(str);
     }
 }
