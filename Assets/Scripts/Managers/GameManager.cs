@@ -39,27 +39,23 @@ public class GameManager : MonoBehaviour
         if (currentGameState == GameState.Idle && requestedState == GameState.Running)
         {
             currentGameState = requestedState;
-            CameraManager.instance.SetAnimatorState(CamStates.gameplay);
         }
         else if (currentGameState == GameState.Running &&
                  requestedState == GameState.FinalMomentum)
         {
             currentGameState = requestedState;
-            CameraManager.instance.SetAnimatorState(CamStates.finalMomentum);
         }
         else if (currentGameState == GameState.FinalMomentum &&
                  requestedState == GameState.Win)
         {
             currentGameState = requestedState;
             uiManager.ShowWinPanel(2);
-            CameraManager.instance.SetAnimatorState(CamStates.endPoint);
         }
         else if (currentGameState == GameState.Running &&
                  requestedState == GameState.Fail)
         {
             currentGameState = requestedState;
             uiManager.ShowFailPanel();
-            CameraManager.instance.SetAnimatorState(CamStates.endPoint);
         }
     }
 

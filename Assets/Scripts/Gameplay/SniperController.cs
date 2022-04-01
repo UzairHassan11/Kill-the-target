@@ -16,21 +16,24 @@ public class SniperController : MonoBehaviour
 
     [SerializeField] private Vector2 fovLimits;
 
-    [SerializeField] private Transform bulletSpawnPoint;
-
     [SerializeField] private Bullet bulletPrefab;
 
-    private Vector2 inputDelta;
     [SerializeField] Vector2 camX_Limits, camY_Limits;
     public float moveSpeed;
 
     [SerializeField] private ControllerState controllerState;
 
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator gunAnimator;
+
+    [SerializeField] private SniperAnimator _sniperAnimator;
     
     private RaycastHit HitInfo;
 
     private Vector3 basePosition;
+    
+    private Vector2 mouseDelta;
+
+    private WanderingHuman currentHuman;
     #endregion
 
     #region unity
@@ -98,8 +101,9 @@ public class SniperController : MonoBehaviour
             zoomedIn = false;
             if (fullyZoomed)
             {
+                // Time.timeScale = .1f;
+
                 SpawnBullet();
-                controllerState = ControllerState.Shot_Fired;
                 fullyZoomed = false;
             }
             else
@@ -153,17 +157,31 @@ public class SniperController : MonoBehaviour
             cam.transform.position.z);
     }
 
-    private Vector2 mouseDelta;
-
     void SpawnBullet()
     {
-        Instantiate(bulletPrefab).Spawn(HitInfo.point);
+        bool targetIsHuman = HitInfo.transform.GetComponent<WanderingHuman>() != null;
+        
+        if (targetIsHuman)
+        {
+            currentHuman = HitInfo.transform.GetComponent<WanderingHuman>();
+            currentHuman.GotTargeted();
+            controllerState = ControllerState.Shot_Fired;
+        }
+        else
+        {
+            print("0");
+            ReloadGun();
+        }
+        Instantiate(bulletPrefab).Spawn(HitInfo.point, targetIsHuman);
     }
 
     void ReloadGun()
     {
+        print("1");
         controllerState = ControllerState.Reloading;
-        _animator.SetTrigger("reload");
+        // gunAnimator.SetTrigger("New Trigger");
+        _sniperAnimator.SetTrigger("reload");
+
         Invoke("SetStateIdle", 1);
     }
 
@@ -171,8 +189,18 @@ public class SniperController : MonoBehaviour
     {
         controllerState = ControllerState.Idle;
     }
+
+    public void HitHuman()
+    {
+        currentHuman.GotHit();
+        if(currentHuman.isTarget)
+            GameManager.instance.uiManager.ShowWinPanel();
+        else
+            GameManager.instance.uiManager.ShowFailPanel();
+    }
     #endregion
 }
+#region ControllerState
 public enum ControllerState
 {
     Idle,
@@ -180,3 +208,4 @@ public enum ControllerState
     Shot_Fired,
     Reloading
 }
+#endregion

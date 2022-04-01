@@ -50,11 +50,9 @@ public class UiManager : MonoBehaviour
     public void OnClickStartPanel()
     {
         startPanel.SetActive(false);
-        CameraManager.instance.SetAnimatorState(CamStates.gameplay);
         GameManager.instance.ChangeGameState(GameState.Running);
         if (!test)
         {
-            CameraManager.instance.SetAnimatorState(CamStates.gameplay);
             GameManager.instance.ChangeGameState(GameState.Running);
         }
     }
