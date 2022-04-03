@@ -1,0 +1,397 @@
+fileFormatVersion: 2
+guid: 4600c7c72f01bd94984453f690f55f2e
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AirConditioner_01
+    second: {fileID: 2100000, guid: 6467b24b23990904d90fe0773d867d6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Building_03
+    second: {fileID: 2100000, guid: 85f878bef08a9824b88eadc47b499f45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Building_04
+    second: {fileID: 2100000, guid: 663bd8bc40380d64a8d9c947f0853496, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Building_06
+    second: {fileID: 2100000, guid: 393d26d3f1870b640b45daa328f84035, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Building_07
+    second: {fileID: 2100000, guid: 547a6a70bbb520f44ac3a00eb5848f89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cardboard_2
+    second: {fileID: 2100000, guid: bd7523e2337ef244686c60fb7c1323f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_02
+    second: {fileID: 2100000, guid: 9035758286f9e6f4aa2094a4fb7983e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_04
+    second: {fileID: 2100000, guid: c32bebd9bc04a764296981b54e90f9d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fence_02
+    second: {fileID: 2100000, guid: 59e5dec4834c31d419da08d86dcf0733, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FireStairs_01
+    second: {fileID: 2100000, guid: 9b15a103eddb0904ebb4664943683f7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fire_Engine1
+    second: {fileID: 2100000, guid: c1fd861f4bd9d5447b6a91895784546d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrassPatch_02
+    second: {fileID: 2100000, guid: 0a9ae2983a0d73e42ba56bab7ab60d59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground_01
+    second: {fileID: 2100000, guid: e4d18a5bfe562c94da2f832977f141ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hatch1
+    second: {fileID: 2100000, guid: 1d45b6b28d72da148bf5c95456fe3419, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_02
+    second: {fileID: 2100000, guid: 3e2e6145b1f2987439e801e310237716, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pegeon1
+    second: {fileID: 2100000, guid: 0f3061c4dd41d7d418c38501bab084d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Posters
+    second: {fileID: 2100000, guid: 45c41b5629b1ed3488adccafa52dc3c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Posters_blue
+    second: {fileID: 2100000, guid: 1aa0b448efbb28f43a3b21d612d076fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Posters_violet
+    second: {fileID: 2100000, guid: 912da0b06e0fbde42b76ae1c96e65b7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber_02
+    second: {fileID: 2100000, guid: c437afefd19e1c141be5e31d5fd4a042, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Separator1
+    second: {fileID: 2100000, guid: 7b68ee0b749b1e94aa7f05bf9d1712e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashCan
+    second: {fileID: 2100000, guid: 894657895438cb74ba1b6bcdffdf9450, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashContainer
+    second: {fileID: 2100000, guid: 6e5c63cfcabbb47468c618b849f1c06b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Van_01
+    second: {fileID: 2100000, guid: 5e63b777a01a3b943b4ca2fb76ee8b8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water_Tower_02
+    second: {fileID: 2100000, guid: ef8df690128a00d48bb9d8f0b1587eba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_04
+    second: {fileID: 2100000, guid: cc2ac548f23e83a46ab0ccc8563a7029, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_06
+    second: {fileID: 2100000, guid: 4de5b2961354bdf4fb72a457797e73ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_07
+    second: {fileID: 2100000, guid: 765ab6081c35ba84695a7ed1c8ba1269, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_cube_03
+    second: {fileID: 2100000, guid: 73d66bb5ed507674dbbb4c28bb9797fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wire_02
+    second: {fileID: 2100000, guid: 21df46283f21fcd46b69889e095d9750, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: AirConditioner_01
+    second: {fileID: 2800000, guid: 78668e95f5af9fc4c84573b2d58e96bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Building_01_color
+    second: {fileID: 2800000, guid: 6eda71315c65c19429f7af926a9dc6de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Building_03_color
+    second: {fileID: 2800000, guid: 41feb8255777b7843ae00ef795c2813b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Building_04_color
+    second: {fileID: 2800000, guid: 268875ba6ca31b047b40d013715cea80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Building_06_color
+    second: {fileID: 2800000, guid: ecccc67f0c86b1845987eb8ea1e9852e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CardboardBox_02_color
+    second: {fileID: 2800000, guid: 4714e7f34b3ecf646a18bd6ba5e258c9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Door_01_color
+    second: {fileID: 2800000, guid: bce3e8a42550eda4a9fa0e0d490465bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Door_02_color
+    second: {fileID: 2800000, guid: 769250468cf4613439b76fcf953e92b5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fence_01_color
+    second: {fileID: 2800000, guid: 5abe76788876a7b46ae94e885a743971, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FireStairs_01
+    second: {fileID: 2800000, guid: c5287119ec0ec4c45b10c64bae62f631, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fire_Engine
+    second: {fileID: 2800000, guid: 392c04ae7a3ea1e4594c9f8cc5c6e7ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Grass_01_color
+    second: {fileID: 2800000, guid: 9603515bac75d2244918d4c9eb990217, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ground_01_color
+    second: {fileID: 2800000, guid: 775868f317e400146be5f02f3110acb5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Hatch
+    second: {fileID: 2800000, guid: fb85c56371b9e2948975a3cdf4e704fa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lights_color
+    second: {fileID: 2800000, guid: e2c01e5497955de40af3ced6a754bbab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pegion_diffuse
+    second: {fileID: 2800000, guid: 196a624cc2fc7954d8ed3ab9d922b4df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Posters_blue
+    second: {fileID: 2800000, guid: 807c4cefcb68ee94e95e40f7f843bce7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Posters_color
+    second: {fileID: 2800000, guid: f8828bd0d565dde469419df60d991215, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Posters_violet
+    second: {fileID: 2800000, guid: 55bde80a72491ad4fb69be3b0689912d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rubber_01_color
+    second: {fileID: 2800000, guid: 6d4bf90dcc51fff4eae70e58181b065f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Separator_color
+    second: {fileID: 2800000, guid: fb146bd21a0ba88499aff36604646eb7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TrashCan_color
+    second: {fileID: 2800000, guid: 05a58686c8ed43249b51892e6938ebf4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TrashContainer_color
+    second: {fileID: 2800000, guid: 126225a68d9b4a942834b04276747d8d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Van_01_color
+    second: {fileID: 2800000, guid: 7fbeb6551e6892d47b14d632a919956b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Water_Tower_01
+    second: {fileID: 2800000, guid: b369e87844c98114cbfe7aed3a8abd1e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Window_03
+    second: {fileID: 2800000, guid: 5413df6d7a206744aabee22c0c2c4370, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Window_04
+    second: {fileID: 2800000, guid: f5697ca5bd8452940a75171cf3ba9a8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Window_06
+    second: {fileID: 2800000, guid: f6e181a90d2911c4b8fe3b082d5fc33d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Window_cube_03
+    second: {fileID: 2800000, guid: be2a905b4eb508944803f79f5aad67c5, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
