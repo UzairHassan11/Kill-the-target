@@ -44,9 +44,14 @@ public class UiManager : MonoBehaviour
             // Elephant.LevelStarted(LevelNumberAnalytics);
             // GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "LevelStart", LevelNumberAnalytics);
         }
+        Invoke("TargetShown", 2);
     }
 
-
+    void TargetShown()
+    {
+        startPanel.SetActive(true);
+    }
+    
     public void OnClickStartPanel()
     {
         startPanel.SetActive(false);

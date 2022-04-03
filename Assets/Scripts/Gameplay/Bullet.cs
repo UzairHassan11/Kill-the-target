@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour
             GameManager.instance.sniperController.SetStateIdle();
         else
         {
-            GameManager.instance.sniperController.HitHuman();
+            GameManager.instance.sniperController.HitHuman(cam);
         }
     }
 }

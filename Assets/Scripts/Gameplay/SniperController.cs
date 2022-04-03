@@ -6,6 +6,8 @@ public class SniperController : MonoBehaviour
 
     [SerializeField] private Transform gunTransform, zoomIn, zoomOut;
 
+    private Transform camBasePos;
+    
     private Camera cam;
 
     [SerializeField] private float cameraTransitionSpeed;
@@ -48,6 +50,9 @@ public class SniperController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.instance.currentGameState != GameState.Running)
+            return;
+        
         HandleInputs();
 
         HandleCameraFOV();
@@ -191,9 +196,9 @@ public class SniperController : MonoBehaviour
         controllerState = ControllerState.Idle;
     }
 
-    public void HitHuman()
+    public void HitHuman(Transform bulletCam)
     {
-        currentHuman.GotHit();
+        currentHuman.GotHit(bulletCam);
         if(currentHuman.isTarget)
             GameManager.instance.uiManager.ShowWinPanel();
         else
