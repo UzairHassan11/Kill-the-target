@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
             return;
         }
         
-        Invoke("BulletHitDelayedAction", .25f);
+        Invoke("BulletHitDelayedAction", .1f);
         if (tween != null)
             tween.Kill();
         // cam.DOShakePosition(.25f, Vector3.one, 10);

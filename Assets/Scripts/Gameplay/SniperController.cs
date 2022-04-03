@@ -4,6 +4,8 @@ public class SniperController : MonoBehaviour
 {
     #region vars
 
+    [SerializeField] private ControllerState controllerState;
+
     [SerializeField] private Transform gunTransform, zoomIn, zoomOut;
 
     private Transform camBasePos;
@@ -21,9 +23,8 @@ public class SniperController : MonoBehaviour
     [SerializeField] private Bullet bulletPrefab;
 
     [SerializeField] Vector2 camX_Limits, camY_Limits;
-    public float moveSpeed;
 
-    [SerializeField] private ControllerState controllerState;
+    public float moveSpeed;
 
     [SerializeField] private Animator gunAnimator;
 
@@ -199,6 +200,8 @@ public class SniperController : MonoBehaviour
     public void HitHuman(Transform bulletCam)
     {
         currentHuman.GotHit(bulletCam);
+        CharactersManager.instance.RunAgentsRun();
+        // CharactersManager.instance.StopAssigningNewTargets();
         if(currentHuman.isTarget)
             GameManager.instance.uiManager.ShowWinPanel();
         else
