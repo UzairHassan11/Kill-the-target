@@ -20,7 +20,8 @@ public class Bullet : MonoBehaviour
         rotatingTrail.SetActive(targetIsHuman);
         windParticles.SetActive(targetIsHuman);
         // tempTrans.position = targetPosition;
-
+        bulletMesh.rotation = Quaternion.LookRotation(targetPosition - transform.position, bulletMesh.up);
+        
         if (targetIsHuman)
         {
             cam.gameObject.SetActive(true);
@@ -62,6 +63,7 @@ public class Bullet : MonoBehaviour
         else
         {
             GameManager.instance.sniperController.HitHuman(cam);
+            ParticlesController.instance.SpawnParticle(ParticlesNames.BloodSplash, transform);
         }
     }
 }

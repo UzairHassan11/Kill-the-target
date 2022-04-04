@@ -38,7 +38,6 @@
 			bgSoundSource.clip = bgClip;
 			bgSoundSource.loop = true;
 			bgSoundSource.Play();
-		    
 			SetBgSoundSetting(GameSettings.Instance.toggleStatusBg);
 			// bgAmbienceSoundSource.clip = bgAmbienceClip;
 			// bgAmbienceSoundSource.loop = true;
@@ -66,15 +65,38 @@
 				sFXSoundSource.PlayOneShot(_audioClips[(int)clipName], volume);
 		}
 		
+		public void PlayBGSound(ClipName clipName, float volume = 1)
+		{
+			if (GameSettings.Instance.toggleStatusBg)
+			{
+				bgSoundSource.clip = _audioClips[(int)clipName];
+				bgSoundSource.volume = volume;
+				bgSoundSource.Play();
+			}
+		}
+		
 		public void PlaySound(int index)
 		{
 			if(GameSettings.Instance.toggleStatusSFX)
 				sFXSoundSource.PlayOneShot(_audioClips[index]);
+		}
+		
+		public void PlayBGSound(int index)
+		{
+			if (GameSettings.Instance.toggleStatusSFX)
+			{
+				bgSoundSource.clip = _audioClips[index];
+				bgSoundSource.Play();
+			}
 		}
 	}
 // }
 //class end
 public enum ClipName
 {
-	Button
+	Button,
+	GunFire,
+	Wind,
+	BulletHit,
+	CrowdScream
 }

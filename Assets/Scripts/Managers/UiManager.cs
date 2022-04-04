@@ -79,6 +79,8 @@ public class UiManager : MonoBehaviour
         winPanel.SetActive(true);
         LevelNumberAnalytics++;
         LevelNumberPref++;
+        if (LevelNumberPref == SceneManager.sceneCountInBuildSettings)
+            LevelNumberPref = 1;
     }
     
     public void ShowFailPanel(float delay = 0)
@@ -110,5 +112,10 @@ public class UiManager : MonoBehaviour
     public void OnReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public void OnNextLevel()
+    {
+        SceneManager.LoadScene(LevelNumberPref);
     }
 }

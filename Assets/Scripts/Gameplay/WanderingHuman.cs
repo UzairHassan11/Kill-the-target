@@ -62,6 +62,11 @@ public class WanderingHuman : MonoBehaviour
         agent.radius = 0;
         died = true;
         AssignDeathCam(cam);
+        ParticlesController.instance.SpawnParticle
+            (ParticlesNames.BloodSplat, transform, 2,
+                new Vector3(0, 0.026f, 0));
+        SoundManager.Instance.PlaySound(3);
+        SoundManager.Instance.PlayBGSound(4);
     }
 
     public void GotTargeted()

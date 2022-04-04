@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/controller.unity
+    path: Assets/Scenes/Splash.unity
+    guid: 5fa415720adbe48b2b689055e457129d
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
     guid: 51feef3e8d1bf41d0ba3591683047645
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: e868a4bae3fd64bd5a19751c277e29c6
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: fd4d35b17a47947309be353789067711
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 3c32e660ad6b3454bb1d94695c05f942
   m_configObjects: {}

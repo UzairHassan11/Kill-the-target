@@ -16,7 +16,7 @@ public class SniperController : MonoBehaviour
 
     [SerializeField] bool zoomedIn, fullyZoomed;
 
-    [SerializeField] private GameObject zoomOutCrossheir, zoomInCrossheir, gunMesh;
+    [SerializeField] private GameObject zoomOutCrossheir, zoomInCrossheir, gunMesh, muzzleFlash;
 
     [SerializeField] private Vector2 fovLimits;
 
@@ -169,16 +169,18 @@ public class SniperController : MonoBehaviour
     void SpawnBullet()
     {
         bool targetIsHuman = HitInfo.transform.GetComponent<WanderingHuman>() != null;
-        
+        // muzzleFlash.SetActive(true);
+        SoundManager.Instance.PlaySound(1);
         if (targetIsHuman)
         {
             currentHuman = HitInfo.transform.GetComponent<WanderingHuman>();
             currentHuman.GotTargeted();
             controllerState = ControllerState.Shot_Fired;
+            SoundManager.Instance.PlayBGSound(2);
         }
         else
         {
-            ReloadGun();
+            SetStateIdle();
         }
         Instantiate(bulletPrefab).Spawn(HitInfo.point, targetIsHuman);
     }

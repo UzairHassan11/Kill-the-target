@@ -25,9 +25,17 @@ public class ParticlesController : MonoBehaviour
             StartCoroutine(spawnWithDelay(particlesName, pos, spawnDelay, spawnOffset, scaleMultiple));
             return;
         }
-        GameObject obj = Instantiate(particlesObjects[(int)particlesName], pos.position + spawnOffset, Quaternion.identity, transform);
+        GameObject obj = Instantiate(particlesObjects[(int)particlesName], pos.position + spawnOffset, particlesObjects[(int)particlesName].transform.rotation, transform);
         obj.transform.localScale *= scaleMultiple;
         obj.gameObject.SetActive(true);
+    }
+    
+    public GameObject GetSpawnParticle(ParticlesNames particlesName, Transform pos, Vector3 spawnOffset = default(Vector3), float scaleMultiple = 1)
+    {
+        GameObject obj = Instantiate(particlesObjects[(int)particlesName], pos.position + spawnOffset, particlesObjects[(int)particlesName].transform.rotation, transform);
+        obj.transform.localScale *= scaleMultiple;
+        obj.gameObject.SetActive(true);
+        return obj;
     }
 
     IEnumerator spawnWithDelay(ParticlesNames particlesName, Transform pos, float spawnDelay = 0, Vector3 spawnOffset = default(Vector3), float scaleMultiple = 0)
@@ -39,7 +47,6 @@ public class ParticlesController : MonoBehaviour
 
 public enum ParticlesNames
 {
-    Bomb,
-    Explosion,
-    Spawn
+    BloodSplash,
+    BloodSplat
 }

@@ -45,8 +45,11 @@ public class CharactersManager : MonoBehaviour
     {
         foreach (var NPCs in NPCs)
         {
-            NPCs.Walk(walkSpeed);
-            NPCs.agent.SetDestination(destination[Random.Range(0, destination.Length)].position);
+            if (NPCs.gameObject.activeSelf)
+            {
+                NPCs.Walk(walkSpeed);
+                NPCs.agent.SetDestination(destination[Random.Range(0, destination.Length)].position);
+            }
         }
     }
 
@@ -54,11 +57,12 @@ public class CharactersManager : MonoBehaviour
     {
         foreach (var NPCs in NPCs)
         {
-            if (!NPCs.died)
-            {
-                if (NPCs.agent.remainingDistance < stoppingDistance)
-                    NPCs.agent.SetDestination(destination[Random.Range(0, destination.Length)].position);
-            }
+            if (NPCs.gameObject.activeSelf)
+                if (!NPCs.died)
+                {
+                    if (NPCs.agent.remainingDistance < stoppingDistance)
+                        NPCs.agent.SetDestination(destination[Random.Range(0, destination.Length)].position);
+                }
         }
     }
 
@@ -66,11 +70,12 @@ public class CharactersManager : MonoBehaviour
     {
         foreach (var NPC in NPCs)
         {
-            if(!NPC.died)
-            {
-                NPC.Run(runSpeed);
-                NPC.agent.SetDestination(destination[Random.Range(0, destination.Length)].position);
-            }
+            if (NPC.gameObject.activeSelf)
+                if (!NPC.died)
+                {
+                    NPC.Run(runSpeed);
+                    NPC.agent.SetDestination(destination[Random.Range(0, destination.Length)].position);
+                }
         }
     }
 

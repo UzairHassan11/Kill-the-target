@@ -32,7 +32,7 @@ public class SaveData
     public int Level = 1;
     public int LevelToUse = 1;
     public int Coins = 0;
-    public int LevelNumberPref = 0;
+    public int LevelNumberPref = 1;
     public int LevelNumberAnalytics = 1;
     #endregion
     
